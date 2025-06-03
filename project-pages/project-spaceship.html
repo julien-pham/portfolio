@@ -68,9 +68,14 @@
             - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
             - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
           -->
-        <div class="main-title">Project Name</div>
-        <div class="body-text">A small description about the project goes here, get the reader hooked on the project and tell them why they should continue to read this page. Give it a sweet tagline.</div>
-        <image class="project-header-image" src="../assets/images/desktop.jpeg">
+        <div class="main-title">Thermal study of a re-entry space launcher</div>
+        <div class="body-text" style="text-align: justify;">An in-depth exploration of heat distribution on a re-entry rocket,
+           modeled using the Finite Element Method and variational formulation.
+            This project blends theoretical mathematics and numerical matrix computations to solve partial differential equations describing thermal behavior.
+            Implemented with FreeFEM and Python.</div>
+        <img class="project-header-image" src="../assets/images/ariane5_croquis.jpeg" alt="Orion dimensions" style="display: block; margin: 0 auto; width: 500px; height: auto;">
+
+
       </div>
 
       <!-- PROJECT DETAILS -->
@@ -82,11 +87,32 @@
       -->
       <div id="project-details">
         <div class="subheader-text">Project Details / Background</div>
-        <div class="project-details-content">
-          <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
-          <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        <div class="project-details-content" style="text-align: justify;">
+          <div class="body-text">
+            During my first-year master’s project, I studied the thermal behavior inside two rockets astronaut capsule during atmospheric re-entry. The objective was to model and simulate the temperature distribution <i>u(x)</i> within the rocket structure by solving a partial differential equation that describes heat propagation with mixed boundary conditions (Neumann, Dirichlet, and Fourier-Robin).
+          </div>
+          <div class="body-text">
+            I learned to code numerical matrix analysis in Python, where I implemented finite element discretizations and solved large sparse linear systems resulting from the variational formulation of the PDE. The variational formulation was done using FreeFEM, a specialized C-based software for solving PDEs with finite elements.
+          </div>
+          <div class="body-text">
+            The core PDE was:
+            <div class="body-text" style="text-align: center;">
+              −div(𝐾<sub>a</sub> ∇u) = f(x,y) in Ω,
+            </div>
+            with boundary conditions involving thermal conductivity <i>𝐾<sub>a</sub></i>, heat source <i>f</i>, and heat transfer coefficients <i>𝛼</i> and <i>𝛽</i>. The Fourier-Robin condition, in particular, allowed modeling convective heat exchange on some boundaries, and by varying the heat transfer coefficient <i>𝛽</i>, I showed how it converges to a Dirichlet condition.
+          </div>
+          <div class="body-text">
+            I formulated the problem variationally and discretized it into a linear system <i>𝐴𝑈 = 𝐹</i>, where <i>𝐴</i> is symmetric positive definite and sparse. This structure enabled the use of efficient solvers such as the Cholesky decomposition and the conjugate gradient method.
+          </div>
+          <div class="body-text">
+            To better understand the physical phenomena and the sensitivity of the system, I performed simulations by varying parameters such as the thickness of the thermal shield, the speed of the rocket, and the external temperature. These simulations allowed me to identify which parameters most strongly influence the internal temperature distribution and the effectiveness of the thermal shield.
+          </div>
+          <div class="body-text">
+            This project was my first opportunity to combine advanced mathematical modeling, numerical linear algebra, and programming skills to solve a real-world engineering problem in aerospace. It helped me solidify my understanding of PDEs, variational methods, and numerical analysis. The work culminated in a comprehensive report of over 80 pages detailing the theoretical and technical aspects of the analysis.
+          </div>
         </div>
       </div>
+
 
       <!-- IMAGE GALLERY -->
       <div id="project-gallery">
@@ -116,17 +142,24 @@
                   - IMAGE_NAME: the name of the image file in assets/images
                   - IMAGE_CAPTION: to the caption of the image
             -->
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/code.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
-            </div>
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
-            </div>
-            <div class="gallery-image-container">
-              <img src="../assets/images/camera.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+<center>
+  <table>
+    <tr>
+      <td><img src="../assets/images/schema_fusee.png" width="475"></td>
+      <td><img src="../assets/images/maillage.PNG" width="475"></td>
+    </tr>
+    <tr>
+      <!-- <td colspan="2" align="center">Rocket schematic and mesh generated with FreeFEM</td> -->
+    </tr>
+  </table>
+</center>
+
+            <div style="width: 100%;">
+              <img src="../assets/images/sol_clim_1,5_0,2_0,05_pyth.png" 
+                  style="width: 500px; height: auto; display: block; margin: 0 auto;">
+              <span class="image-caption" style="display: block; text-align: center; margin-top: 8px;">
+                Rocket schematic and mesh generated with FreeFEM, simulation of heat distribution 
+              </span>
             </div>
         </div>
       </div>
