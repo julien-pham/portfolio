@@ -13,6 +13,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+    <script>
+      MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 		<meta charset="utf-8">
     <!-- 
       TODO
@@ -72,7 +79,7 @@
       <div class="body-text" style="text-align: justify;">
         An in-depth exploration of predator-prey and logistic growth models through differential equations, combining mathematical analysis with computational simulations in Python. Discover how equilibrium points and phase portraits reveal the complexities of ecological systems and inform sustainable resource management.
       </div>
-      <image class="project-header-image" src="../assets/images/desktop.jpeg">
+
 
 
       <!-- PROJECT DETAILS -->
@@ -91,6 +98,29 @@
           <div class="body-text">
             To complement the theoretical work, I implemented numerical simulations and phase portrait visualizations using Python. These computational models were essential to validate my analytical results and supported the development of an original hybrid model combining predator-prey interactions with logistic growth, further explored through simulations.
           </div>
+
+          <div class="body-text">
+            The complete hybrid model I studied was described by the following system of differential equations:
+
+            $$
+            \begin{cases}
+              \frac{dx}{dt} = ax \left(1 - \frac{x}{M}\right) - bxy - qEx \\
+              \frac{dy}{dt} = -cy + dxy - \tilde{q}\tilde{E}y
+            \end{cases}
+            $$
+
+            where:
+            <ul>
+              <li>$a$ is the intrinsic growth rate of the prey.</li>
+              <li>$b$ is the predation rate coefficient.</li>
+              <li>$c$ is the natural death rate of the predators.</li>
+              <li>$d$ is the reproduction rate of predators based on prey consumed.</li>
+              <li>$M$ is the environmental carrying capacity for the prey.</li>
+              <li>$E, \tilde{E}$ represent fishing effort on prey and predator respectively.</li>
+              <li>$q, \tilde{q}$ are catchability coefficients for each species.</li>
+            </ul>
+          </div>
+
           <div class="body-text">
             This project significantly enhanced my knowledge of differential equations and provided me with my first hands-on experience in population dynamics modeling. The work culminated in a comprehensive report of over 50 pages detailing the theoretical and practical insights gained.
           </div>
@@ -126,16 +156,13 @@
                   - IMAGE_CAPTION: to the caption of the image
             -->
             <div class="gallery-image-container half-width">
-              <img src="../assets/images/code.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+              <img src="../assets/images/VL_lievre_lynx.png" class="gallery-image">
             </div>
             <div class="gallery-image-container half-width">
-              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+              <img src="../assets/images/phase_lynx.png" class="gallery-image">
             </div>
             <div class="gallery-image-container">
-              <img src="../assets/images/camera.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+              <img src="../assets/images/volterra_peche_normal.png" class="gallery-image">
             </div>
         </div>
       </div>
